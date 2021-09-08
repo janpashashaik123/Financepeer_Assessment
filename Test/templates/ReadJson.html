@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+   <head>
+     <title>File Input</title>
+	 <style>
+	 .center{
+    position:absolute;
+    height: X px;
+    width: Y px;
+    left:30%;
+    top:50%;
+    margin-top:- X/2 px;
+    margin-left:- Y/2 px;
+}
+    </style>
+  </head>
+  
+  <body>
+    {%block content%}
+	<div class="center">
+	<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    <label>Please Select a Json file:</label>
+    <input type="file" name="doc" id="fileInput">
+    <button type="submit">Upload File</button>
+    <script src="{%static 'index.js' %}"></script>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <button type="submit">Logout</button>
+
+
+  </form>
+</div>
+{% endblock %}
+  </body>
+  
+</html>

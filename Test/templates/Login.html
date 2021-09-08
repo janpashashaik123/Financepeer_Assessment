@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ {% load static %}
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login and Registration form example</title>
+ 
+<link rel="stylesheet" type="text/css" href="{% static 'Login.css' %}">
+ 
+</head>
+ 
+<body>
+ 
+<div id="container">
+<form action="Login.html" method="post" id="flogin">
+{% csrf_token %}
+<div class="border-box">
+<h2>Login Form</h2>
+<label for="uname" id="un">Username:</label>
+<input type="text" name="user" placeholder="Enter Username" id="uname" required><br/>
+ 
+<label for="upass" id="ps">Password:</label>
+<input type="password" name="pass" placeholder="Enter Password" id="upass" required><br/>
+ 
+<button type="submit" value="Login"  id="submit" >Login</button>
+ 
+<a href="Signup.html">New Member</a>
+</div>
+ 
+</form>
+</div>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+ 
+</body>
+</html>
